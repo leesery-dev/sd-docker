@@ -28,7 +28,7 @@ runuser -u sd -- /bin/bash -s -- "$@" <<'EOF'
     . venv/bin/activate
 
     # Install torch~=2.7.0 and torchvision~=0.22.0 with cuda 12.8 toolkit to support Pascal GPU.
-    [ -d "venv/lib/python3.13/site-packages/torch" ] || pip3 install -r ../requirements.txt
+    [ -d "venv/lib/python3.11/site-packages/torch" ] || pip3 install -r ../requirements.txt
    
     ./webui.sh "$@"
 EOF
