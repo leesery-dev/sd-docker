@@ -1,6 +1,7 @@
-FROM python:3.11-trixie
+FROM python:3.11-slim-trixie
 
-RUN apt-get update && apt-get install -y libgl1 git
+RUN apt-get update && apt-get install -y libgl1 git libglib2.0-0
+RUN python3 -m pip install pip --upgrade && pip3 install setuptools wheel --upgrade
 
 COPY src/* /opt/
 
