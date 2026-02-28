@@ -8,6 +8,8 @@ It's designed to be a very fast, quick, and dirty method to get a containerized 
 
 This setup essentially automates the steps outlined in the official [Install and Run on NVidia GPUs](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs) guide within a Docker container.
 
+To build the image, run `docker build -t leesery/sd-docker:pascal .`
+
 When you run `docker-compose up -d`, it will:
 1.  Clone the latest version of the `stable-diffusion-webui` repository into it.
 2.  Install dependencies and launch the web UI.
