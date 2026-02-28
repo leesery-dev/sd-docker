@@ -2,11 +2,18 @@ services:
   stable-diffusion:
     container_name: stable-diffusion
     restart: unless-stopped
-    image: leesery/sd-docker:latest
+    image: leesery/sd-docker:pascal
     ports:
       - 7860:7860
     volumes:
-      - ./sd-data:/opt/stable-diffusion-webui
+      - sd-data:/opt/stable-diffusion-webui
+      - ./works/configs:/opt/stable-diffusion-webui/configs
+      - ./works/models:/opt/stable-diffusion-webui/models
+      - ./works/outputs:/opt/stable-diffusion-webui/outputs
+      - ./works/extensions:/opt/stable-diffusion-webui/extensions
+      - ./works/embeddings:/opt/stable-diffusion-webui/embeddings
+      - ./works/localizations:/opt/stable-diffusion-webui/localizations
+      - ./works/logs:/opt/stable-diffusion-webui/logs
     command: 
       - --api
       - --listen
@@ -17,3 +24,6 @@ services:
             - driver: nvidia
               count: all 
               capabilities: [gpu]
+volumes:
+  sd-data:
+    driver: local
