@@ -2,7 +2,7 @@ services:
   stable-diffusion:
     container_name: stable-diffusion
     restart: unless-stopped
-    image: vladflorinilie/sd-docker:latest
+    image: leesery/sd-docker:latest
     ports:
       - 7860:7860
     volumes:
